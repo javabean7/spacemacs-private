@@ -102,7 +102,8 @@ values."
                     spaceline holy-mode skewer-mode rainbow-delimiters
                     highlight-indentation vi-tilde-fringe eyebrowse
                     org-bullets smooth-scrolling org-repo-todo org-download org-timer
-                    livid-mode git-gutter git-gutter-fringe  evil-escape
+                    livid-mode git-gutter git-gutter-fringe
+                    ;; evil-escape
                     leuven-theme gh-md evil-lisp-state spray lorem-ipsum symon
                     ac-ispell ace-jump-mode auto-complete auto-dictionary
                     clang-format define-word google-translate disaster epic
@@ -358,6 +359,8 @@ values."
   )
 
 (defun dotspacemacs/user-config ()
+  (setq org-bullets-bullet-list '("🐠  " "🐶 " "🐬" "🐤"))
+  (setq-default evil-escape-key-sequence "jk")
   ;;解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
     (when (and (spacemacs/system-is-mac) window-system)
